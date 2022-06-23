@@ -1,0 +1,25 @@
+/* navbar placements */
+.header {
+  display: flex;
+  position: relative;
+  margin-left: 23em;
+}
+/* sizing of the icons and text, adding another font, and placements */
+.socials {
+  font-size: xx-large;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-top: 9%;
+  margin-left: 35%;
+  margin-bottom: 5%;
+}
+.instagram-media {
+  display: flex;
+  max-width: 100%;
+  width: 50%;
+  align-content: center;
+}
+/* adjusting the size of the maps */
+iframe {
+  width: 100%;
+  height: 80%;
+}

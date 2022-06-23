@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* this code animates the background */
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    -60deg,
+    #94dffff8 50%,
+    rgb(153, 0, 255) 50%
+  );
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 10s;
+}
+
+.bg3 {
+  animation-duration: 12s;
+}
+
+.content {
+  left: 50%;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-family: monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+/* navigation bar */
+
+.nav-links {
+  display: flex;
+  text-align: right;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 2px 4px;
+  position: relative;
+  top: 1.5em;
+  left: 25em;
+}
+.nav-links ul li a {
+  color: #4c0d4c;
+  text-decoration: none;
+  font-size: 17px;
+}
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #0d0d7ea8;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+/* Landing page*/
+
+.undraw img {
+  margin: auto 3px;
+  width: 550px;
+  height: 250px;
+  position: relative;
+  top: 120px;
+  right: 50%;
+}
+
+.undraw {
+  width: 100%;
+}
+/* button animation and gradient*/
+.button-more {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(32, 17, 53);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  top: 5em;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-more:before {
+  content: "";
+  background: linear-gradient(45deg, #00ffd5, #002bff, #7a00ff, #ff00c8);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 300%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-more 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-more {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-more:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(184, 184, 184, 0.692);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+/* this is the code that animates the text in a wavy way */
+span {
+  font-size: 72px;
+  background: -webkit-linear-gradient(rgb(8, 29, 83), rgba(36, 0, 81, 0.795));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.waviy {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  font-size: 60px;
+}
+.waviy span {
+  font-family: "Alfa Slab One", cursive;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+}
+/* footer */
+footer {
+  position: fixed;
+  background: #a2d8efbe;
+  bottom: 0;
+  transition: bottom 0.2s ease-in-out;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 2%;
+  animation-timing-function: linear;
+}
+
+.foot-nav {
+  bottom: -40px;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  font-style: normal;
+  color: black;
+}
+footer a {
+  text-decoration: none;
+  color: black;
+}
